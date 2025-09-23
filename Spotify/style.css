@@ -208,6 +208,17 @@ buttons > *{
 
 }
 
+.hamburger{
+    display: none;
+}
+
+.hamburgerCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
 .songList ul{
     padding: 0 12px;
     
@@ -249,13 +260,14 @@ buttons > *{
 }
 
 .seekbar{
-    height: 2px;
+    height: 4px;
     width: 90%;
     background: black;
     border-radius: 10px;
     position: absolute;
     bottom: 0;
     margin: 6px;
+    cursor: pointer;
 }
 
 .circle{
@@ -301,13 +313,13 @@ buttons > *{
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .left {
         position: absolute;
-        left: -130%;
+        left: -100%;
         transition: all .3s;
         z-index: 1;
-        width: 373px;
+        width: 233px;
         background-color: black;
         padding: 0;
         height: 100vh;
@@ -340,7 +352,7 @@ buttons > *{
     }
 
     .playbar {
-        width: calc(100vw - 75px); 
+        width: 95vw; 
     }
 
     .seekbar {

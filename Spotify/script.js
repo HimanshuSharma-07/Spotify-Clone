@@ -42,19 +42,23 @@ async function getSongs(){
 
 let currTrack = new Audio()
 
-const playMusic = (track)=>{
+const playMusic = (track, pause = false)=>{
     // let audio = new Audio("songs/" + track)
     currTrack.src = "songs/" + track
-    currTrack.play()
-    play.src = "img/pause.svg"
-    document.querySelector(".songinformation").innerHTML = track
+    if(!pause){
+        currTrack.play() 
+        play.src = "img/pause.svg"
+    }
+    
+    
+    document.querySelector(".songinformation").innerHTML = decodeURI(track)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 }
 
 async function main(){
     // Get the list of all songs
     let songs = await getSongs()
-    
+    playMusic(songs[0], true)
     // Show all the songs in the playlist
     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for(const song of songs) {
@@ -96,12 +100,21 @@ async function main(){
                 }
                 })
 
+                // Listen for timeupdate event
                 currTrack.addEventListener("timeupdate", ()=>{
                     console.log(Math.floor(currTrack.currentTime, currTrack.duration));
-                    document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currTrack.currentTime)} / ${secondsToMinutesSeconds(currTrack.duration)}`   
+                    document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currTrack.currentTime)} / ${secondsToMinutesSeconds(currTrack.duration)}`
+                    document.querySelector(".circle").style.left = (currTrack.currentTime / currTrack.duration) * 100 + "%"  
                     
                 })
-        
+
+                // Add an event listner to seekbar
+                document.querySelector(".seekbar").addEventListener("click", (e)=>{
+                    
+                    document.querySelector(".circle").style.left = (e.offsetX / e.target.getBoundingClientRect().width) * 100 + "%"
+                    let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+                    currTrack.currentTime = ((currTrack.duration) * percent) / 100
+                })
   
 }
 
