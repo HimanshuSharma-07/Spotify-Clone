@@ -212,7 +212,7 @@ buttons > *{
     display: none;
 }
 
-.hamburgerCont{
+.hamburgerContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,7 +319,7 @@ buttons > *{
         left: -100%;
         transition: all .3s;
         z-index: 1;
-        width: 233px;
+        width: 433px;
         background-color: black;
         padding: 0;
         height: 100vh;
@@ -334,9 +334,9 @@ buttons > *{
 
     .left .close {
         position: absolute;
-        right: 31px;
-        top: 25px;
-        width: 29px;
+        right: 15px;
+        top: 10px;
+        width: 25px;
     }
 
     .timevol {
