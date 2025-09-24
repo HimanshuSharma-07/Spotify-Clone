@@ -197,7 +197,7 @@ buttons > *{
     justify-content: center;
     gap: 16px;
     width: 70vw;
-    height: 40px;
+    min-height: 40px;
 
 }
 
@@ -294,7 +294,7 @@ buttons > *{
 .aboveBar{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    margin: 20px 0;
     
     
 }
@@ -341,11 +341,18 @@ buttons > *{
     }
 
     .playbar {
-        width: 95vw; 
+        width: calc(100vw - 60px);
+        font-size: 11px;
+        bottom: 3px;
+        
+        
+    }
+    .playbar img{
+        height: 15px;
     }
 
     .seekbar {
-        width: calc(100vw - 120px);
+        width: calc(100vw - 70px);
     }
 
     .hamburger {
