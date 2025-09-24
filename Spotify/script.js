@@ -116,13 +116,14 @@ async function main(){
                     currTrack.currentTime = ((currTrack.duration) * percent) / 100
                 })
 
-
+                // Ada an en=vent listner for hamburger
                 document.querySelector(".hamburger").addEventListener("click", ()=>{
                     document.querySelector(".left").style.left = "0"
                 })
 
+                // Ada an en=vent listner for close
                 document.querySelector(".close").addEventListener("click", ()=>{
-                    document.querySelector(".left").style.left = "-100%"
+                    document.querySelector(".left").style.left = "-120%"
                 })
   
 }
