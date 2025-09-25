@@ -321,6 +321,58 @@ buttons > *{
     
 }
 
+.volume{
+    width: 10%;
+    height: 75%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.volume img{
+    height: 25px;
+}
+
+.timevol{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* .range{
+  appearance: none;          
+  writing-mode: bt-lr;       
+  -webkit-appearance: slider-vertical; 
+  width: 6px;                
+  height: 100px;            
+  background: #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.range::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1db954;  
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1db954;
+  cursor: pointer;
+} */
+
 
 
 @media (max-width: 1400px) {

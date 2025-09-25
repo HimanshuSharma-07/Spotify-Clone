@@ -160,6 +160,33 @@ async function main(){
                     
                 })
 
+                document.querySelector(".range").addEventListener("change", (e)=>{
+                    
+                    currTrack.volume = parseInt(e.target.value)/100
+                    if(currTrack.volume == 0){
+                        document.querySelector(".volumeimg").src =  src="img/mute.svg"
+                    }
+                    else{
+                        document.querySelector(".volumeimg").src =  src="img/volume.svg"
+                    }
+                })
+
+                document.querySelector(".volumeimg").addEventListener("click", () =>{
+                    const volumeImg = document.querySelector(".volumeimg")
+                    const rangeChange = document.querySelector(".range")
+                    if( volumeImg.src.includes("volume.svg")){
+                        volumeImg.src =  src="img/mute.svg"
+                        currTrack.volume = 0
+                        rangeChange.value = 0
+                    }
+                    else{
+                        volumeImg.src = src="img/volume.svg"
+                        currTrack.volume = 1
+                        rangeChange.value = 100
+                    }
+                   
+                })
+
 
 
 
