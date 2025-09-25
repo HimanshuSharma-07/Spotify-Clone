@@ -1,4 +1,6 @@
 console.log("Lets write JavaScript");
+let currTrack = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -40,7 +42,7 @@ async function getSongs(){
     
 } 
 
-let currTrack = new Audio()
+
 
 const playMusic = (track, pause = false)=>{
     // let audio = new Audio("songs/" + track)
@@ -57,7 +59,7 @@ const playMusic = (track, pause = false)=>{
 
 async function main(){
     // Get the list of all songs
-    let songs = await getSongs()
+    songs = await getSongs()
     playMusic(songs[0], true)
     // Show all the songs in the playlist
     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0]
@@ -116,15 +118,51 @@ async function main(){
                     currTrack.currentTime = ((currTrack.duration) * percent) / 100
                 })
 
-                // Ada an en=vent listner for hamburger
+                // Ada an envent listner for hamburger
                 document.querySelector(".hamburger").addEventListener("click", ()=>{
                     document.querySelector(".left").style.left = "0"
                 })
 
-                // Ada an en=vent listner for close
+                // Ada an envent listner for close
                 document.querySelector(".close").addEventListener("click", ()=>{
                     document.querySelector(".left").style.left = "-120%"
                 })
+
+
+                // Add an event listner to next
+                next.addEventListener("click", ()=>{
+                    let index = songs.indexOf(currTrack.src.split("s/").splice(-1) [0])
+                    
+                    if([index+1] < songs.length){
+                        
+                        playMusic(songs[index+1])
+                    }
+                    else{
+                        playMusic(songs[0])
+                    }
+                    
+                    
+
+                    
+                })
+                
+                // Add an event listner to previous
+                previous.addEventListener("click", ()=>{
+                
+                    let index = songs.indexOf(currTrack.src.split("s/").splice(-1) [0])
+                    
+                    if (index > 0) {
+                      playMusic(songs[index - 1]);
+                    } 
+                    else {
+                      playMusic(songs[songs.length - 1]);
+                    }
+                    
+                })
+
+
+
+
   
 }
 

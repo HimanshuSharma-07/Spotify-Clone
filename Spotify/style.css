@@ -287,12 +287,33 @@ buttons > *{
 
 }   
 
-.songinformation, .songtime{
+.songinformation{
+    width: 40%;
     color: black;
     padding: 0 12px;
 }
 
+.songtime{
+    width: 40%;
+    color: black;
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.songbuttons{
+    width: 10%;
+}
+
+.songtime{
+    width: 40%;
+    display: flex;
+    justify-content: end;
+}
+
 .aboveBar{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
@@ -318,7 +339,12 @@ buttons > *{
 
     .songinfo,
     .songtime {
-        width: auto;
+        width: 40%;
+    }
+
+    .songbuttons{
+        width: 20%;
+        
     }
 
     .left .close {
