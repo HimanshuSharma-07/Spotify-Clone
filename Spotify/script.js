@@ -187,6 +187,10 @@ async function main(){
                    
                 })
 
+                document.querySelector(".play").addEventListener("click", ()=>{
+                    currTrack.play();
+                })
+
 
 
 
